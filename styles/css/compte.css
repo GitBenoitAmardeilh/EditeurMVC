@@ -1,0 +1,295 @@
+body{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    margin:0;
+}
+
+.img_dir{
+    width:100px;
+}
+
+.img_main_menu{
+    width:35px;
+    margin-top:5px;
+}
+
+/*  *****************  */
+/*        HEADER       */
+/*  *****************  */
+
+#div_header_arbo{
+
+    background-color: rgb(250,250,250);
+    border-bottom: 1px solid rgb(200,200,200);
+
+    width: 100%;
+}
+
+#btnMainMenu ul{
+
+    margin:0;
+    padding:0;
+
+}
+
+#btnMainMenu li{
+
+    display:inline-block;
+    overflow: hidden;
+
+}
+
+#btnMainMenu .divHideScreen{
+
+    display:block;
+    text-decoration: none;
+    color:black;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+
+}
+
+/* ******* */
+
+#divHideMenu{
+
+    background-color: rgb(240,240,240);
+    border-top: 1px solid rgb(180,180,180);
+
+}
+
+.divContainerBtn span{
+
+    display: block;
+    text-align: center;
+    color:rgb(100,100,100);
+
+}
+
+#divBtnMenu .img_hori{
+
+    width:35px;
+    margin-top:5px;
+
+}
+
+#divBlcHoriz a{
+
+    overflow: hidden;
+    display: inline-block;
+    border:1px solid transparent;
+    text-decoration: none;
+    color:black;
+    height: 100%;
+
+}
+
+#divBlcHoriz a:hover{
+    background-color:rgba(0,98,230,0.1);
+    border:1px solid rgba(0,98,230,0.6);
+}
+
+
+/*  *****************  */
+/*    ARBORESCENCE     */
+/*  *****************  */
+
+#div_arbo{
+    
+    background-color: rgb(230,230,230);
+    border-bottom: 1px solid rgb(200,200,200);
+    
+    width: 100%;
+ 
+}
+
+/*  *****************  */
+/*     DIV DIR FILE    */
+/*  *****************  */
+
+#div_dir_file{
+
+    width: 100%;
+    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    
+}
+
+#div_dir_file > div{
+
+    padding:10px;
+
+}
+
+#div_dir_file #containe_dir_file > div{
+
+    display: inline-block;
+    margin:10px;
+
+}
+
+/*  *****************  */
+/*    DIV MAIN MENU    */
+/*  *****************  */
+
+#div_main_menu{
+    
+    display: flex;
+    justify-content:center;
+    text-align: center;
+
+    background-color: rgb(200,200,200);
+    border-top:1px solid rgb(180,180,180);
+    width:100%;
+    
+}
+
+@media all and (min-width:1280px){
+    
+    /*  *****************  */
+    /*    DIV MAIN MENU    */
+    /*  *****************  */
+    
+    #div_main_menu > div{
+
+        width:100px;
+        height: 50px;
+
+    }
+    
+}
+
+@media all and (max-width:1280px) and (min-width:900px){
+    
+    img{
+        width:35px;
+        margin-top:5px;
+    }
+    
+    /*  *****************  */
+    /*    DIV MAIN MENU    */
+    /*  *****************  */
+    
+    
+    #div_main_menu > div{
+        
+        display: inline-block;
+        width:80px;
+        height: 50px;
+
+    }
+}
+
+@media all and (max-width:900px) and (min-width:450px){
+    
+    img{
+        width:30px;
+        margin-top:5px;
+    }
+    
+    /*  *****************  */
+    /*    DIV MAIN MENU    */
+    /*  *****************  */
+    
+    #div_main_menu{
+        position: fixed;
+        bottom: 0;
+    }
+    
+    #div_main_menu > div{
+        
+        display: inline-block;
+        width:80px;
+        height: 50px;
+
+    }
+    
+    #div_main_menu div img{
+        
+        margin-top:10px;
+        
+    }
+    
+}
+
+@media all and (max-width:450px){
+    
+    #div_header_arbo{
+
+        height: 15%;
+    }
+    
+    /*  *****************  */
+    /*    DIV MAIN MENU    */
+    /*  *****************  */
+    
+    #containe_dir_file img{
+        width:60px;
+    }
+    
+    #div_main_menu img{
+        width:25px;
+        margin-top:7px;
+    }
+
+    #div_main_menu > div{
+
+        width:50px;
+        height: 40px;
+
+    }
+    
+}
+
+/*************************************************
+                  Menu header
+*************************************************/
+
+@media all and (min-width:450px){
+    
+
+
+    /*  *****************  */
+    /*        HEADER       */
+    /*  *****************  */
+
+
+    #divHideMenu .divContainerBtn{
+
+        display: inline-block;
+        border-right:1px solid rgb(210,210,210);
+    }
+
+    .divContainerBtn #divBtnMenu > div{
+
+        display: inline-block;
+
+    }
+
+    /* ********* */
+
+    #divBtnMenu{
+
+        height: 80px;
+        padding: 5px;
+    } 
+
+    #divBlcHoriz div{
+
+        margin:auto;
+        text-align: center;
+
+    }
+
+    #divBlcHoriz div p{
+
+        margin: 5px;
+    }
+    
+}

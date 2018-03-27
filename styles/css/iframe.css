@@ -1,0 +1,12 @@
+.blc_edition{
+    border:1px solid transparent;
+    background-color: white;
+    position: absolute;
+    
+    min-width: 80px;
+}
+
+.blc_edition p{
+    margin:0;
+    padding:5px;
+}

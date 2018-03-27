@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'DancingScriptRegular';
+    src: url('font/DancingScriptRegular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'TheRedlightFree';
+    src: url('font/TheRedlightFree.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'DustWestCollege';
+    src: url('font/DustWestCollege.woff') format("woff");
+}
+
+@font-face {
+    font-family: 'RioGrande';
+    src: url('font/RioGrande.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Drifttype';
+    src: url('font/Drifttype.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'LittleBird';
+    src: url('font/LittleBird.ttf') format("truetype");
+}
+
+/* PARAGRAPHES */
+
+.DancingScriptRegular , #DancingScriptRegular{ font-family:DancingScriptRegular; font-size:18px; }
+.TimeNewRoman , #TimeNewRoman{ font-family: 'Times New Roman'; font-size:18px; }
+.ArialBlack, #ArialBlack{ font-family: 'Arial Black'; font-size:18px; }
+.Arial, #Arial{ font-family:Arial; font-size:18px; }
+.TheRedlightFree, #TheRedlightFree{ font-family: TheRedlightFree; font-size:25px; }
+
+/* TITRES */
+
+.DustWestCollege, #DustWestCollege{ font-family: DustWestCollege; font-size:65px;  }
+.RioGrande, #RioGrande{ font-family: RioGrande; font-size:50px;  }
+.Drifttype, #Drifttype{ font-family: Drifttype; font-size:50px;  }
+
+/* FANTAISES */
+
+.LittleBird, #LittleBird{ font-family: LittleBird; font-size:55px; }
