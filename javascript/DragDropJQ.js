@@ -111,19 +111,12 @@
             e.originalEvent.dataTransfer.setData('text/plain', draggedDiv.id); /* < originalEvent > Seulement pour JQuery*/
             
             data = e.originalEvent.dataTransfer.getData("text"); /* < originalEvent > Seulement pour JQuery*/
+            
+            console.log(document.getElementById(data).firstChild);
 
             posXYDiv();
 
             posXYMouseInDiv();
-            
-            addDDImg( e );
-
-        });
-        
-
-        $('.div_polices').on('mouseup', function(e){
-
-            removeDDImg();
 
         });
 
@@ -135,6 +128,9 @@
 
             styleFilePolice = document.createElement("Link");
             styleFileIframe = document.createElement("Link");
+            blcHeaderIframe = document.createElement("header");
+            blcBodyIframe   = document.createElement("section");
+            blcfooterIframe = document.createElement("footer");
 
             styleFilePolice.setAttribute("rel", "stylesheet");
             styleFilePolice.setAttribute("type", "text/css");
@@ -142,10 +138,19 @@
 
             styleFileIframe.setAttribute("rel", "stylesheet");
             styleFileIframe.setAttribute("type", "text/css");
-            styleFileIframe.setAttribute("href", "../styles/css/iframe.css");  
+            styleFileIframe.setAttribute("href", "../styles/css/iframe.css"); 
+            
+            blcHeaderIframe.setAttribute("id", "v_header"); 
+            blcBodyIframe.setAttribute("id", "v_body"); 
+            blcfooterIframe.setAttribute("id", "v_footer"); 
+            
 
             ifrm.head.appendChild(styleFilePolice);
             ifrm.head.appendChild(styleFileIframe);
+            
+            ifrm.body.appendChild(blcHeaderIframe);
+            ifrm.body.appendChild(blcBodyIframe);
+            ifrm.body.appendChild(blcfooterIframe);
 
         });
 
@@ -182,8 +187,6 @@
         $('#ifrm').contents().on('drop', function(e){
 
             e.preventDefault();
-            
-            removeDDImg();
 
             ifrm.body.appendChild(document.getElementById(data).cloneNode(true));
 
@@ -371,22 +374,6 @@
 
             $('#div_iframe_edition').css( 'height'  ,  arrayDivInfos['height'] );
 
-        },
-
-
-        addDDImg = function( e ){
-
-            var img = new Image();
-                img.src = '../style/img/imgDrag.png';
-            
-            e.dataTransfer.setDragImage(img ,posImgX,posImgY);
-
-        }
-        
-        removeDDImg = function(){
-
-
-            
         }
 
     });

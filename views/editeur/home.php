@@ -228,7 +228,7 @@
                     
                         <div id="div_rname">
                         
-                            <p id="p_width">L : </p>
+                            <p id="p_width">L</p>
                         
                         </div>
                         
@@ -244,7 +244,7 @@
                     
                         <div id="div_rname">
                         
-                            <p id="p_height">H : </p>
+                            <p id="p_height">H</p>
                         
                         </div>
                         
@@ -267,7 +267,7 @@
                     
                         <div id="div_rname">
                         
-                            <p id="p_width">X : </p>
+                            <p id="p_width">X</p>
                         
                         </div>
                         
@@ -283,7 +283,7 @@
                     
                         <div id="div_rname">
                         
-                            <p id="p_width">Y : </p>
+                            <p id="p_width">Y</p>
                         
                         </div>
                         
