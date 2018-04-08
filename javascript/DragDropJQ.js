@@ -15,8 +15,8 @@
 
         /* ***************************** */
 
-        draggedDiv = null;
-
+        /* "ifrm" Utile pour appendChild() */
+        
         ifrm;
         ifrm.contentDocument.body.style.margin = '0px';
 
@@ -41,23 +41,14 @@
         var posXMouseInDiv = 0;
 
         var posYMouseInDiv = 0;
+        
+        
+        
+        $('body').on('mousemove', function(e){
 
+            posXYMouse( e );
 
-
-        /* A finir */
-        var listPolice = [
-
-                'Arial',
-                'ArialBlack',
-                'DancingScriptRegular',
-                'Drifttype',
-                'Dust West',
-                'LittleBird',
-                'RioGrande',
-                'TimeNewRoman',
-                'TheRedlightFree',  
-
-        ]; 
+        })
 
 
         /******************* SCROLL ********************/
@@ -68,9 +59,6 @@
             scrollBodyY = $(window).scrollTop();
 
         })
-
-
-        /***********************************************/
 
 
         $('#div_list_polices').mCustomScrollbar({
@@ -97,30 +85,7 @@
 
         });
 
-        $('body').on('mousemove', function(e){
-
-            posXYMouse( e );
-
-        })
-
-        $('.div_polices').attr('draggable','true');
-
-        $('.div_polices').on('dragstart', function(e){
-
-            draggedDiv = e.target;
-            e.originalEvent.dataTransfer.setData('text/plain', draggedDiv.id); /* < originalEvent > Seulement pour JQuery*/
-            
-            data = e.originalEvent.dataTransfer.getData("text"); /* < originalEvent > Seulement pour JQuery*/
-            
-            console.log(document.getElementById(data).firstChild);
-
-            posXYDiv();
-
-            posXYMouseInDiv();
-
-        });
-
-        /************************************************/
+        /**************** CONFIG IFRAME *****************/
 
         $('#ifrm').contents().each(function(){
 
@@ -140,9 +105,12 @@
             styleFileIframe.setAttribute("type", "text/css");
             styleFileIframe.setAttribute("href", "../styles/css/iframe.css"); 
             
-            blcHeaderIframe.setAttribute("id", "v_header"); 
-            blcBodyIframe.setAttribute("id", "v_body"); 
-            blcfooterIframe.setAttribute("id", "v_footer"); 
+            blcHeaderIframe.setAttribute("id", "top_header"); 
+            blcHeaderIframe.setAttribute("class", "header_ifrm"); 
+            blcBodyIframe.setAttribute("id", "body");
+            blcBodyIframe.setAttribute("class", "body_ifrm");
+            blcfooterIframe.setAttribute("id", "bottom_footer"); 
+            blcfooterIframe.setAttribute("class", "footer_ifrm");
             
 
             ifrm.head.appendChild(styleFilePolice);
@@ -153,10 +121,53 @@
             ifrm.body.appendChild(blcfooterIframe);
 
         });
+        
+        $('#ifrm').contents().find('.header_ifrm').each(function(){
+            
+            $(this).on('click', function(){
+                
+                alert('ok');
+                
+            });
+            
+            
+        });
+        
+        (function(){
+            
+            arrayDirectionHF = ['top', 'left','bottom','right'];
+            
+            for( var id in arrayDirectionHF){
+                
+                $('#div_position_'+arrayDirectionHF[id]).on('click', function(){
+                    
+                    
+                    
+                });
+                
+            }
+            
+        })();
+
 
         /***************** DRAG & DROP ******************/
+        
+        $('.div_polices').attr('draggable','true');
 
+        $('.div_polices').on('dragstart', function(e){
 
+            e.originalEvent.dataTransfer.setData('text/plain', $(this).attr('id')); /* < originalEvent > Seulement pour JQuery*/
+            
+            data = e.originalEvent.dataTransfer.getData("text"); /* < originalEvent > Seulement pour JQuery*/
+            
+            console.log(document.getElementById(data).firstChild);
+
+            posXYDiv( $(this).attr('id') );
+
+            posXYMouseInDiv();
+
+        });
+        
         $('#ifrm').contents().on('dblclick', function(e){
 
             if( $(div_iframe_edition).css('display') == 'block'){
@@ -164,8 +175,6 @@
                 $(div_iframe_edition).css('display','none');
 
             }
-
-            console.log('ok');
 
         })
 
@@ -234,7 +243,7 @@
         });
 
 
-        /*****************************************************/
+        /****************** FUNCTIONS ******************/
 
 
         posXYMouse = function( e ){
@@ -245,11 +254,11 @@
 
         },
 
-        posXYDiv = function(){
+        posXYDiv = function( id ){
 
             posXDiv = lengthlistPolice.left; /* +4 ? */
 
-            posYDiv = document.getElementById(draggedDiv.id).offsetTop;
+            posYDiv = document.getElementById( id ).offsetTop;
 
         },
 
@@ -340,23 +349,18 @@
 
         initMenuValuesDiv = function( object ){
 
-            if(object == null){
-                
-            }
-            else{
-            
+            if(object != null){
+
                 for(var id in object.arrayDivInfos){
 
+                    /* On recupère l'input via l'id puis on lui ajoute une valeur */
+                    
                     if( $('input[name="'+id+'"]').val() != undefined){
 
                         $('input[name="'+id+'"]').val(object.arrayDivInfos[id]);
-
-
-                    }
-
+                    } 
                 }
             }
-
         },
 
 

@@ -186,6 +186,7 @@ body{
 
 
 .class_container > div{
+    
     width:330px;
     
 }
@@ -232,16 +233,23 @@ body{
     
 }
 
-#div_list_polices div{
-
+#div_list_polices > div{
+    
     background-color: white;
+    
 }
 
 /***************************************/
 
-#div_container_blocks h1{
+#div_container_HF h1{
     
     background-image: linear-gradient(rgba(230,30,0,0.7),rgb(230,30,0));
+    
+}
+
+#div_options_HF > div{
+    
+    background-color: white;
     
 }
 
@@ -253,7 +261,172 @@ body{
     height:15px;
 }
 
+/*************************/
+/****   CONTAINER HF  ****/
+/*************************/
+
+#container_position_HF{
+    
+    display: flex;
+    flex-direction: column;
+    padding:10px 0 10px 0;
+    
+}
+
+#container_position_HF img{
+    
+    width:30px;
+    
+}
+
+#container_position_HF p{
+
+    display: block;
+    
+    background-color: rgba(180,180,180,0.5);
+    border:1px solid rgb(120,120,120);
+    box-shadow: 0 0 3px black, 0 2px 3px 0 white inset;
+    
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#container_position_HF a{
+
+    display: block;
+    
+    line-height: 30px;
+    width:inherit;
+    height: inherit;
+
+    text-align: center;
+    margin: auto;
+    
+}
+
+#div_position_top{
+    
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+#div_position_mid{
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+#div_position_mid > div{
+
+    margin:20px;
+    
+}
+
+#div_position_mid #div_position_left{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 30px;
+}
+
+#div_position_mid #div_mid_center{
+
+    width: 80px;
+    height: 120px;
+    
+}
+
+#div_position_mid #div_position_right{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 30px;
+    
+}
+
+#div_position_bottom{
+
+    width: 30px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+#div_img_position_HF{
+    
+    border:1px solid rgb(200,200,200);
+    box-shadow: 0 0 3px rgb(150,150,150);
+    
+    height: 100%;
+
+}
+
+#body{
+    
+    width: 100%;
+    height: 100%;
+}
+
+#top_header{
+    
+    position: relative;
+    top:0;
+    
+    background-color: rgba(0,98,230,0.5);
+    border-bottom:1px solid rgba(160,160,160,0.2);
+    
+    width: 100%;
+    height: 15px;
+}
+
+#left_header{
+    
+    position: relative;
+    left:0;
+    
+    border-right:1px solid rgba(160,160,160,0.2);
+    
+    width: 10px;
+    height: 100%;
+}
+
+#bottom_footer{
+
+    position: relative;
+    top:93px;
+    
+    background-color: rgba(0,98,230,0.5);
+    border-top:1px solid rgba(160,160,160,0.2);
+    
+    width: 100%;
+    height: 10px;
+}
+
+#right_footer{
+
+    position: relative;
+    right:0;
+    
+    border-left:1px solid rgba(160,160,160,0.2);
+    
+    width: 8px;
+    height: 100%;
+}
+
+
+/**************************/
 /****  CONTAINER COORD ****/
+/**************************/
 
 #div_container_coord{
     

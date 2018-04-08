@@ -21,7 +21,23 @@ body{
     padding:5px;
 }
 
-#v_header{
+.header_ifrm:hover, .body_ifrm:hover, .footer_ifrm:hover{
+    
+    background-color: rgba(0,98,230,0.1);
+    cursor: pointer;
+    
+}
+
+#body{
+    
+    width: 100%;
+    height: 100%;
+}
+
+#top_header{
+    
+    position: fixed;
+    top:0;
     
     border-bottom:1px dashed rgb(160,160,160);
     
@@ -29,16 +45,35 @@ body{
     height: 200px;
 }
 
-#v_body{
+#left_header{
     
-    width: 100%;
+    position: fixed;
+    left:0;
+    
+    border-right:1px dashed rgb(160,160,160);
+    
+    width: 200px;
     height: 100%;
 }
 
-#v_footer{
+#bottom_footer{
 
+    position: fixed;
+    bottom:0;
+    
     border-top:1px dashed rgb(160,160,160);
     
     width: 100%;
     height: 100px;
+}
+
+#right_footer{
+
+    position: fixed;
+    right:0;
+    
+    border-left:1px dashed rgb(160,160,160);
+    
+    width: 80px;
+    height: 100%;
 }

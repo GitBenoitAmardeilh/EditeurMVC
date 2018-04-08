@@ -57,7 +57,7 @@
                         <li><?php echo '<a id="paragraphes" class="classBtnMenu"><img src="'.ROOT.'styles/img/paragrapheFini1.png" class="img_dir"/></a>'; ?>
                         </li>
                         
-                        <li><?php echo '<a id="blocks" class="classBtnMenu"><img src="'.ROOT.'styles/img/blocs1.png" class="img_dir"/></a>'; ?></li>
+                        <li><?php echo '<a id="HF" class="classBtnMenu"><img src="'.ROOT.'styles/img/blocs1.png" class="img_dir"/></a>'; ?></li>
                         
                         <li><?php echo '<a id="images" class="classBtnMenu"><img src="'.ROOT.'styles/img/images1.png" class="img_dir"/></a>'; ?></li>
                     
@@ -164,12 +164,62 @@
 
         </div>
         
-        <div id="div_container_blocks" class="class_container">
+        <div id="div_container_HF" class="class_container">
         
             <div id="main_title">
 
                 <h1>En-Tête / Pied de page</h1>
 
+            </div>
+            
+            <div id="div_options_HF">
+            
+                <div id="container_position_HF">
+                
+                    
+                    <div id="div_position_top">
+                    
+                        <?php echo '<p><a href="#"><img src="'.ROOT.'styles/img/livre.png"/></a></p>'; ?>
+                    
+                    </div>
+                    
+                    <div id="div_position_mid">
+                    
+                        <div id="div_position_left">
+                        
+                            <?php echo '<p><a href="#"><img src="'.ROOT.'styles/img/livre.png"/></a></p>'; ?>
+                            
+                            
+                        </div>
+                        
+                        <div id="div_mid_center">
+                        
+                            <div id="div_img_position_HF">
+                            
+                                <header id="top_header"></header>
+                                <body id="body"></body>
+                                <footer id="bottom_footer"></footer>
+                            
+                            </div>
+                            
+                        </div>
+                        
+                        <div id="div_position_right">
+                        
+                            <?php echo '<p><a href="#"><img src="'.ROOT.'styles/img/livre.png"/></a></p>'; ?>
+                        
+                        </div>
+                    
+                    </div>
+                    
+                    <div id="div_position_bottom">
+                    
+                        <?php echo '<p><a href="#"><img src="'.ROOT.'styles/img/livre.png"/></a></p>'; ?>
+                    
+                    </div>
+                
+                </div>
+            
             </div>
         
         </div>
