@@ -1,0 +1,106 @@
+#firstBodyEditeur{
+    
+    display: none;
+    
+}
+
+#loadPageBody{
+    
+    background-color: rgb(90,90,90);
+    
+    margin: 0;
+    padding-top:300px;
+    
+}
+
+#loadPageBody > div{
+    
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    
+}
+
+#loadPageBody h1{
+    
+    text-shadow:0 2px 1px rgb(150,150,150);
+    
+    margin: 0;
+    padding: 0;
+    
+    font-size: 40px;
+    
+}
+
+#loadPageBody #progressBar{
+    
+    -webkit-transition: background 0.3s;
+    
+    background-image: linear-gradient(to right, white, rgb(160,160,160), rgb(80,80,80), black);
+    background-size: 300% 50%;
+    
+    height: 3px;
+    width: 100%;
+    margin:15px 0 15px 0;
+    
+    -webkit-animation: progressBar 5s ease infinite;
+    animation: progressBar 5s ease infinite;
+    
+}
+
+#loadPageBody p{
+
+    font-size: 25px;
+    
+    margin: 0;
+    padding: 0;
+    
+}
+
+@keyframes load{
+    
+    0%{
+        
+        color:black;
+        
+    }
+    
+    25%{
+        
+        color:rgb(230,230,230);
+        
+    }
+    
+    50%{
+        
+        color:rgb(230,230,230);
+        
+    }
+    
+    75%{
+        
+        color:rgb(230,230,230);
+        
+    }
+    
+    100%{
+        
+        color:black;
+        
+    }
+    
+}
+
+@keyframes progressBar{
+    
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+    
+}
+
+@-webkit-keyframes progressBar {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
