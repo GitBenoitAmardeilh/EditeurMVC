@@ -11,6 +11,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <?php echo '<script src="'.ROOT.'/javascript/jquery.mCustomScrollbar.concat.min.js"></script>';?> 
     
+    <?php echo '<script src="'.ROOT.'javascript/createEditor.js"></script>'; ?>
+    <?php echo '<script src="'.ROOT.'javascript/DragDropJQ.js"></script>'; ?>
     
     <meta name="viewport" content="width=device-width"/>
     
@@ -352,7 +354,25 @@
         
         </div>
         
-        <?php echo '<script src="'.ROOT.'javascript/DragDropJQ.js"></script>'; ?>
+        <div id="div_container_header_ifrm" class="class_container_iframe">
+        
+            <nav>
+            
+                <ul>
+                    
+                    <li id="li_title">Menu en-tête</li>
+                
+                    <?php echo '<li><a href="#"><img src="'.ROOT.'styles/img/parametres.png"/></a></li>'; ?>
+                    
+                    <?php echo '<li><a href="#"><img src="'.ROOT.'styles/img/pinceau.png"/></a></li>'; ?>
+                    
+                    <?php echo '<li><a href="#"><img src="'.ROOT.'styles/img/aide.png"/></a></li>'; ?>
+                
+                </ul>
+            
+            </nav>
+        
+        </div>
         
     </body>
     

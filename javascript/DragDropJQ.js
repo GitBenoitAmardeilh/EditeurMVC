@@ -7,10 +7,11 @@
 (function($){
     
     $(window).on('load',function(){
+        
+        alert('debut');
 
         /* ***************************** */
 
-        var lengthContainer = $('#div_container_paragraphes').offset();
         var lengthlistPolice = $('#div_list_polices').offset();
 
         /* ***************************** */
@@ -48,7 +49,7 @@
 
             posXYMouse( e );
 
-        })
+        });
 
 
         /******************* SCROLL ********************/
@@ -125,8 +126,12 @@
         $('#ifrm').contents().find('.header_ifrm').each(function(){
             
             $(this).on('click', function(){
+
+                posTop = parseInt($(this).css('height')) - 10;
                 
-                alert('ok');
+                $('#div_container_header_ifrm').css('display','block');
+                $("#div_container_header_ifrm").css('top' , posTop);
+                $("#div_container_header_ifrm").css('left' ,' 50%');
                 
             });
             
@@ -214,7 +219,7 @@
 
                 $(this).css('height', Math.round( parseInt( $(this).css('height'))) ); 
 
-
+                
                 $(this).css('left', posXMouse - posXMouseInDiv - 1); /* Bordure */
 
                 $(this).css('top', posYMouse - posYMouseInDiv);
@@ -256,7 +261,7 @@
 
         posXYDiv = function( id ){
 
-            posXDiv = lengthlistPolice.left; /* +4 ? */
+            posXDiv = parseInt($('#div_container_paragraphes').css('left')); /* +4 ? */
 
             posYDiv = document.getElementById( id ).offsetTop;
 
@@ -266,7 +271,9 @@
 
             posXMouseInDiv = posXMouse - posXDiv;
 
-            posYMouseInDiv = ((posYMouse - ( lengthlistPolice.top + posYDiv)) - scrollDivPoliceY) + scrollBodyY + 5; /* + 5px = margin h2 */
+            posYMouseInDiv = ((posYMouse - ( parseInt($('#div_container_paragraphes').css('top')) + posYDiv)) - scrollDivPoliceY) + scrollBodyY + 5; /* + 5px = margin h2 */
+            
+            console.log(posYMouseInDiv);
 
         },
 
@@ -379,6 +386,8 @@
             $('#div_iframe_edition').css( 'height'  ,  arrayDivInfos['height'] );
 
         }
+        
+        alert('fin');
 
     });
     
@@ -387,22 +396,19 @@
 
     $('.classBtnMenu').each(function(){
         
-        $("#div_container_"+$(this).attr('id')).css('visibility' , 'hidden');
-        
         $(this).on('click', function(){
             
-            for( var i = 0 ; i < $('.classBtnMenu').length ; i++){
+            if( $("#div_container_"+$(this).attr('id')).css('display') == 'none' ){
                 
-                $('.class_container').css('visibility' , 'hidden');
+                $("#div_container_"+$(this).attr('id')).css('display' , 'block');
+                
+            }
+            else{
+                
+                $("#div_container_"+$(this).attr('id')).css('display' , 'none');
                 
             }
             
-            $("#div_container_"+$(this).attr('id')).css('visibility') == 'hidden' ? 
-
-                $("#div_container_"+$(this).attr('id')).css('visibility', 'visible') :
-
-            $("#div_container_"+$(this).attr('id')).css('visibility', 'hidden');
-
 
         });                    
                             

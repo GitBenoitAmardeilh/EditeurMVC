@@ -227,6 +227,12 @@ body{
 
 /***************************************/
 
+#div_container_paragraphes{
+
+    display: none;
+    
+}
+
 #div_container_paragraphes h1{
     
     background-image: linear-gradient(rgba(0,98,230,0.7),rgb(0,98,230));
@@ -240,6 +246,12 @@ body{
 }
 
 /***************************************/
+
+#div_container_HF{
+    
+    display: none;
+    
+}
 
 #div_container_HF h1{
     
@@ -528,6 +540,78 @@ body{
 
 
 /************************************
+            HEADER IFRAME
+*************************************/
+
+
+#div_container_header_ifrm{
+    
+    position: absolute;
+    display: none;
+    
+}
+
+nav ul{
+    
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav #li_title{
+
+    background-image: linear-gradient( rgb(155,155,155) , rgb(100,100,100) );
+    color:white;
+    
+    width: 120px;
+    line-height: 35px;
+
+    text-align: center;
+    font-size: 17px;
+    border-radius: 25px;
+
+}
+
+nav li{
+    
+    display: inline-block;
+    overflow: hidden;
+    
+    box-shadow: 0 0 3px black;
+    
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+    
+    border-radius: 50%;
+    
+    
+}
+
+nav a{
+    
+    display: block;
+    
+    background-image: linear-gradient( rgb(255,255,255) , rgb(200,200,200) );
+    box-shadow: 0 0 3px black;
+    
+    width: inherit;
+    height: inherit;
+    margin: auto;
+    
+    border-radius: 50%;
+    text-align: center;
+    
+}
+
+nav img{
+    
+    width: 25px;
+    margin-top:5px;
+    
+}
+
+/************************************
             IFRAME EDITION
 *************************************/
 
@@ -557,43 +641,10 @@ body{
 }
 
 
-
-/************************************
-              ANIMATIONS
-*************************************/
-
-@keyframes  imgAnimation{
-    
-    /*
-    0%{
-        
-        width:40px;
-        left:0;
-        
-    }
-    
-    50%{
-        
-        width:30px;
-        left:3px;
-        margin-top:2px;
-        margin-bottom:1px;
-        
-    }
-    
-    100%{
-        
-        width:40px;
-        left:0;
-        
-    }
-    */
-    
-}
-
 /************************************
                SCROLLBAR
 *************************************/
+
 
 #mCSB_1_scrollbar_vertical .mCSB_dragger_bar{
     
