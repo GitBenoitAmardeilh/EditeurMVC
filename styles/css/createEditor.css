@@ -23,8 +23,6 @@
 
 #loadPageBody h1{
     
-    text-shadow:0 2px 1px rgb(150,150,150);
-    
     margin: 0;
     padding: 0;
     
@@ -50,6 +48,8 @@
 
 #loadPageBody p{
 
+    color:white;
+    
     font-size: 25px;
     
     margin: 0;

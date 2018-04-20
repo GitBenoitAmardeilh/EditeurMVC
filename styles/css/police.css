@@ -9,8 +9,8 @@
 }
 
 @font-face {
-    font-family: 'DustWestCollege';
-    src: url('font/DustWestCollege.woff') format("woff");
+    font-family: 'DustWest';
+    src: url('font/DustWest.woff') format("woff");
 }
 
 @font-face {
@@ -38,7 +38,7 @@
 
 /* TITRES */
 
-.DustWestCollege, #DustWestCollege{ font-family: DustWestCollege; font-size:65px;  }
+.DustWest, #DustWest{ font-family: DustWest; font-size:65px;  }
 .RioGrande, #RioGrande{ font-family: RioGrande; font-size:50px;  }
 .Drifttype, #Drifttype{ font-family: Drifttype; font-size:50px;  }
 
