@@ -8,36 +8,36 @@
 
     /* ***************************** */
 
-    var lengthlistPolice = $('#divListPolices').offset();
+    let lengthlistPolice = $('#divListPolices').offset();
 
     /* ***************************** */
 
     /* "ifrm" Utile pour appendChild() */
 
-    ifrm;
-    ifrm.contentDocument.body.style.margin = '0px';
+    let ifrm;
+        ifrm.contentDocument.body.style.margin = '0px';
 
-    var count = 0;
-
-
-    var scrollBodyY = 0;    
-
-    var scrollDivPoliceY = 0;
+    let count = 0;
 
 
-    var posXMouse = 0;
+    let scrollBodyY = 0;
 
-    var posYMouse = 0;
-
-
-    var posXDiv = 0;
-
-    var posYDiv = 0;
+    let scrollDivPoliceY = 0;
 
 
-    var posXMouseInDiv = 0;
+    let posXMouse = 0;
 
-    var posYMouseInDiv = 0;
+    let posYMouse = 0;
+
+
+    let posXDiv = 0;
+
+    let posYDiv = 0;
+
+
+    let posXMouseInDiv = 0;
+
+    let posYMouseInDiv = 0;
 
 
 
@@ -55,7 +55,7 @@
 
         scrollBodyY = $(window).scrollTop();
 
-    })
+    });
 
 
     $('#divListPolices').mCustomScrollbar({
@@ -86,13 +86,13 @@
 
     $('#ifrm').contents().each(function(){
 
-        ifrm = this;
+        let ifrm = this;
 
-        styleFilePolice = document.createElement("Link");
-        styleFileIframe = document.createElement("Link");
-        blcHeaderIframe = document.createElement("header");
-        blcBodyIframe   = document.createElement("section");
-        blcfooterIframe = document.createElement("footer");
+        let styleFilePolice = document.createElement("Link");
+        let styleFileIframe = document.createElement("Link");
+        let blcHeaderIframe = document.createElement("header");
+        let blcBodyIframe   = document.createElement("section");
+        let blcfooterIframe = document.createElement("footer");
 
         styleFilePolice.setAttribute("rel", "stylesheet");
         styleFilePolice.setAttribute("type", "text/css");
@@ -136,9 +136,9 @@
 
     (function(){
 
-        arrayDirectionHF = ['top', 'left','bottom','right'];
+        let arrayDirectionHF = ['top', 'left','bottom','right'];
 
-        for( var id in arrayDirectionHF){
+        for( let id in arrayDirectionHF){
 
             $('#div_position_'+arrayDirectionHF[id]).on('click', function(){
 
@@ -221,7 +221,7 @@
             $(this).css('top', posYMouse - posYMouseInDiv);
 
 
-            var object = createObjectDivIframe( $(this).attr('id') );
+            let object = createObjectDivIframe( $(this).attr('id') );
 
             initMenuValuesDiv( object );
 
@@ -275,7 +275,7 @@
 
     createObjectDivIframe = function( id ){
 
-        var object = ' ';
+        let object = ' ';
 
         $("#ifrm").contents().find('#'+id ).each(function(index){
 
@@ -331,7 +331,7 @@
 
             }
 
-            var obj = new ObjectDiv( $(this) );
+            let obj = new ObjectDiv( $(this) );
 
 
             $(this).click(function(){
@@ -358,7 +358,7 @@
 
                 /* On recupère l'input via l'id puis on lui ajoute une valeur */
 
-                if( $('input[name="'+id+'"]').val() != undefined){
+                if( $('input[name="'+id+'"]').val() !== undefined){
 
                     $('input[name="'+id+'"]').val(object.arrayDivInfos[id]);
                 } 
@@ -369,19 +369,22 @@
 
     addMenuEdition = function(arrayDivInfos){
 
-        $('#div_iframe_edition').css( 'display' , $(div_iframe_edition).css('display') == 'none' ? 'block' : 'block' );
+        let divIframe;
+        divIframe = $('#div_iframe_edition');
 
         $('#mouseover_blc').css( 'display' , 'none' );
 
-        $('#div_iframe_edition').css( 'left'    ,  arrayDivInfos['offLeft'] + $('#ifrm').position().left + 1 ); /* +2 Bordure */
+        divIframe.css( 'display' , divIframe.css('display') === 'none' ? 'block' : 'block' );
 
-        $('#div_iframe_edition').css( 'top'     ,  arrayDivInfos['offTop'] + parseInt($('#ifrm').css('margin-top')) + 1 ); /* +1 Bordure */   
+        divIframe.css( 'left'    , arrayDivInfos['offLeft'] + $('#ifrm').position().left + 1 ); /* +2 Bordure */
 
-        $('#div_iframe_edition').css( 'width'   ,  arrayDivInfos['width'] );
+        divIframe.css( 'top'     , arrayDivInfos['offTop'] + parseInt($('#ifrm').css('margin-top')) + 1 ); /* +1 Bordure */
 
-        $('#div_iframe_edition').css( 'height'  ,  arrayDivInfos['height'] );
+        divIframe.css( 'width'   , arrayDivInfos['width'] );
 
-    }
+        divIframe.css( 'height'  , arrayDivInfos['height'] );
+
+    },
         
     
     /****************** ACTIONS MENUS *******************/
@@ -411,7 +414,7 @@
     
     $("#loadPageBody").remove();
 
-    for( var i = 0 ; i < $(".delete").length ; i++){
+    for( let i = 0 ; i < $(".delete").length ; i++){
 
         $(".delete").remove();
 

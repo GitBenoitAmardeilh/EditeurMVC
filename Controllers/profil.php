@@ -18,13 +18,15 @@ class Profil extends Controller{
     
     public function verifAccount(){
         
+
         if(isset($_POST['btn_valider']) == 'VALIDER'){
-            
+
    			$this->loadModel('User');
 			$data = $this->User->read();
             
 			if(isset($_POST['pseudo']) && $_POST['pseudo'] == $data['pseudo']){
-				if(sha1(isset($_POST['password'])) && sha1($_POST['password']) == $data['password']){
+                
+                if(sha1(isset($_POST['password'])) && sha1($_POST['password']) == $data['password']){
 
 					$this->session->setSession($data['id']);
 					header('location:view');

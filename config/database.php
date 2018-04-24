@@ -22,4 +22,4 @@
 
 	CONST PSEUDO   = "root";
 
-	CONST PASSWORD = "Pau64bensu00";
+	CONST PASSWORD = "Pau64ben/su00";

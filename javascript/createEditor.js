@@ -2,16 +2,17 @@
     
     $(window).on('load',function(){
 
-        ROOT = $('input[type="hidden"]').val();
-        $('#firstBodyEditeur').find($('input[type="hidden"]')).remove();
+        let mainBody = $('#firstBodyEditeur');
+        const ROOT = $('input[type="hidden"]').val();
+        mainBody.find($('input[type="hidden"]')).remove();
         
-        log = [
+        let log = [
             
             'initialisation', 
             'Création des menus'
         ];
         
-        script = [
+        let script = [
 
             'jquery.mCustomScrollbar.concat.min',
             'DragDropJQ'
@@ -19,10 +20,11 @@
             
         ];
         
-        polices = [
+        let polices = [
 
             '-Paragraphe',
             
+            'DustWest',
             'DancingScriptRegular',
             'TimeNewRoman',
             'Arial',
@@ -45,10 +47,10 @@
         
         createBalise = function( type , idBls = null , classBls = null , href = null ){
             
-            bls = $('<'+type+'></'+type+'>');
-            bls.attr( 'id' , idBls );
-            bls.attr( 'class' , classBls );
-            bls.attr( 'href' , href );
+            let bls = $('<'+type+'></'+type+'>');
+                bls.attr( 'id' , idBls );
+                bls.attr( 'class' , classBls );
+                bls.attr( 'href' , href );
             
             return bls;
             
@@ -62,10 +64,10 @@
             
             );
             
-            paragraphe = $("<p></p>").text(log[0]);
-            paragraphe.attr('id','para');
+            let paragraphe = $("<p></p>").text(log[0]);
+                paragraphe.attr('id','para');
             
-            container = $("<div></div>");
+            let container = $("<div></div>");
             
             container.append( 
                 
@@ -96,45 +98,46 @@
             $("#para").text(log[1]);
             
             
-            /****** MAIN CONTAINER EDITOR - MENU LEFT / RIGHT *****/
-            
-            
-            divContainer        = createBalise('div','mainContainerEditor');
-            divHeaderMainMenu   = createBalise('div','divheaderMainMenu');
-            divHeaderMenu       = createBalise('div','divHeaderMenu');
-            divContainerIframe  = createBalise('div', 'divContainerIframe');
-            divMenuEdition      = createBalise('div', 'divMenuEdition');
-            divBtnEdition       = createBalise('div', 'divBtnEdition');
-            
-            iframe              = createBalise('iframe','ifrm');
-            iframe.attr('readonly','readonly');
+            /** MAIN CONTAINER EDITOR - MENU LEFT / RIGHT 
+            ----------------------------------------------------------------- **/
 
-            ulLeft              = createBalise('ul','ulLeft');
-            ulRight             = createBalise('ul','ulRight');
-            ulLeftMenu          = createBalise('ul');
-            
-            liFile              = createBalise('li');
-            liTool              = createBalise('li');
-            liDisplay           = createBalise('li');
-            liCreatePDF         = createBalise('li');
-            liParagraphe        = createBalise('li');
-            liHF                = createBalise('li');
-            liImage             = createBalise('li');
-            
-            linkFile            = createBalise('a' , null , null , '#');
-            linkTool            = createBalise('a' , null , null , '#');
-            linkDisplay         = createBalise('a' , null , null , '#');
-            linkCreatePDF       = createBalise('a' , null , null , '#');
-            linkParagraphe      = createBalise('a' , 'paragraphes' , 'classBtnMenu' , '#');
-            linkHF              = createBalise('a' , 'HF' , 'classBtnMenu' , '#');
-            linkImage           = createBalise('a' , 'images' , 'classBtnMenu' , '#');
-            
-            imgParagraphe       = createBalise('img' , null , null , null);
-            imgParagraphe.attr('src' , ROOT+'styles/img/paragrapheFini1.png');
-            imgHF               = createBalise('img' , null , null , null);
-            imgHF.attr('src' , ROOT+'styles/img/blocs1.png');
-            imgImage            = createBalise('img' , null , null , null);
-            imgImage.attr('src' , ROOT+'styles/img/images1.png');
+
+            let divContainer        = createBalise('div','mainContainerEditor');
+            let divHeaderMainMenu = createBalise('div', 'divheaderMainMenu');
+            let divHeaderMenu       = createBalise('div','divHeaderMenu');
+            let divContainerIframe  = createBalise('div', 'divContainerIframe');
+            let divMenuEdition      = createBalise('div', 'divMenuEdition');
+            let divBtnEdition       = createBalise('div', 'divBtnEdition');
+
+            let editor              = createBalise('iframe','ifrm');
+                editor.attr('readonly','readonly');
+
+            let ulLeft              = createBalise('ul','ulLeft');
+            let ulRight             = createBalise('ul','ulRight');
+            let ulLeftMenu          = createBalise('ul');
+
+            let liFile              = createBalise('li');
+            let liTool              = createBalise('li');
+            let liDisplay           = createBalise('li');
+            let liCreatePDF         = createBalise('li');
+            let liParagraphe        = createBalise('li');
+            let liHF                = createBalise('li');
+            let liImage             = createBalise('li');
+
+            let linkFile            = createBalise('a' , null , null , '#');
+            let linkTool            = createBalise('a' , null , null , '#');
+            let linkDisplay         = createBalise('a' , null , null , '#');
+            let linkCreatePDF       = createBalise('a' , null , null , '#');
+            let linkParagraphe      = createBalise('a' , 'paragraphes' , 'classBtnMenu' , '#');
+            let linkHF              = createBalise('a' , 'HF' , 'classBtnMenu' , '#');
+            let linkImage           = createBalise('a' , 'images' , 'classBtnMenu' , '#');
+
+            let imgParagraphe       = createBalise('img' , null , null , null);
+                imgParagraphe.attr('src' , ROOT+'styles/img/paragrapheFini1.png');
+            let imgHF               = createBalise('img' , null , null , null);
+                imgHF.attr('src' , ROOT+'styles/img/blocs1.png');
+            let imgImage            = createBalise('img' , null , null , null);
+                imgImage.attr('src' , ROOT+'styles/img/images1.png');
             
             
             
@@ -166,40 +169,39 @@
             divHeaderMenu.append(ulLeft);
             divHeaderMenu.append(ulRight);
             divHeaderMainMenu.append(divHeaderMenu);
-            divContainerIframe.append(iframe);
+            divContainerIframe.append(editor);
             divBtnEdition.append(ulLeftMenu);
             divMenuEdition.append(divBtnEdition);
             
             divContainer.append(divHeaderMainMenu);
             divContainer.append(divContainerIframe);
             divContainer.append(divMenuEdition);
-            
-            $('#firstBodyEditeur').append(divContainer);
-            
-            
-            
-            /************* CONTAINER PARAMETRES *************/
+
+            mainBody.append(divContainer);
             
             
+            /** CONTAINER PARAMETRES 
+            ----------------------------------------------------------------- **/
+
+
+            let divContainerParagraphes = createBalise('div','divContainerParagraphes','classContainer');
+            let divMainTitle            = createBalise('div','divMainTitle');
+            let divListPolices          = createBalise('div','divListPolices');
+            let divFooter               = createBalise('div','divFooter');
             
-            divContainerParagraphes = createBalise('div','divContainerParagraphes','classContainer');
-            divMainTitle            = createBalise('div','divMainTitle');
-            divListPolices          = createBalise('div','divListPolices');
-            divFooter               = createBalise('div','divFooter');
-            
-            h1                      = createBalise('h1');
-            h1.text("Ajouter du texte");
+            let h1                      = createBalise('h1');
+                h1.text("Ajouter du texte");
             
             
-            for( var i = 0 ; i < polices.length ; i++){
+            for( let i = 0 ; i < polices.length ; i++){
                 
                 
-                if( polices[i][0] == '-'){
+                if( polices[i][0] === '-'){
+
+                    let divSecondTitle  = createBalise('div','divSecondTitle');
                     
-                    divSecondTitle  = createBalise('div','divSecondTitle');
-                    
-                    h2              = createBalise('h2');
-                    h2.text( polices[i].substring(1) );
+                    let h2              = createBalise('h2');
+                        h2.text( polices[i].substring(1) );
                     
                     divSecondTitle.append(h2);
                     divListPolices.append(divSecondTitle);
@@ -207,9 +209,9 @@
                 }
                 else{
                  
-                    divParagraphe   = createBalise('div', polices[i] , 'divPolices');
-                    pParagraphe     = createBalise('p',)
-                    pParagraphe.text(polices[i]);
+                    let divParagraphe   = createBalise('div', polices[i] , 'divPolices');
+                    let pParagraphe     = createBalise('p',);
+                        pParagraphe.text(polices[i]);
                     
                     divParagraphe.append(pParagraphe);
                     divListPolices.append(divParagraphe);
@@ -223,55 +225,54 @@
             divContainerParagraphes.append(divMainTitle);
             divContainerParagraphes.append(divListPolices);
             divContainerParagraphes.append(divFooter);
-            
-            $('#firstBodyEditeur').append(divContainerParagraphes);
-            
-            
-            
-            /************* CONTAINER PARAMETRES *************/
 
+            mainBody.append(divContainerParagraphes);
             
+            
+            /** CONTAINER COORDONNEES 
+            ----------------------------------------------------------------- **/
 
-            divContainerCoord   = createBalise('div' , 'divContainerCoord');
-            divCoordValue       = createBalise('div' , 'divCoordValue');
-            divLength           = createBalise('div' , 'divLength');
-            divPosition         = createBalise('div' , 'divPosition');
-            divRowW             = createBalise('div' ,'W' ,  'divRow');
-            divRowH             = createBalise('div' ,'H' ,  'divRow');
-            divRowX             = createBalise('div' ,'X' ,  'divRow');
-            divRowY             = createBalise('div' ,'Y' ,  'divRow');
-            divNameWidth        = createBalise('div' , null , 'divName');
-            divNameHeight       = createBalise('div' , null , 'divName');
-            divInputWidth       = createBalise('div' , null , 'divInput');
-            divInputHeight      = createBalise('div' , null , 'divInput');
-            divNameLeft         = createBalise('div' , null , 'divName');
-            divNameTop          = createBalise('div' , null , 'divName');
-            divInputLeft        = createBalise('div' , null , 'divInput');
-            divInputTop         = createBalise('div' , null , 'divInput');
-            
-            h3Width             = createBalise('h3');
-            h3Position             = createBalise('h3');
-            
-            pWidth              = createBalise('p' , 'pWidth');
-            pLength             = createBalise('p' , 'pLength');
-            pLeft               = createBalise('p' , 'pLeft');
-            pTop                = createBalise('p' , 'pTop');
-            
-            inputWidth          = createBalise('input');
-            inputWidth.attr('type' , 'text');
-            inputWidth.attr('name' , 'width');
-            
-            inputHeight         = createBalise('input');
-            inputHeight.attr('type' , 'text');
-            inputHeight.attr('name' , 'height');
-            
-            inputLeft           = createBalise('input');
-            inputLeft.attr('type' , 'text');
-            inputLeft.attr('name' , 'offLeft');
-            
-            inputTop            = createBalise('input');
-            inputTop.attr('type' , 'text');
-            inputTop.attr('name' , 'offTop');
+
+            let divContainerCoord   = createBalise('div' , 'divContainerCoord');
+            let divCoordValue       = createBalise('div' , 'divCoordValue');
+            let divLength           = createBalise('div' , 'divLength');
+            let divPosition         = createBalise('div' , 'divPosition');
+            let divRowW             = createBalise('div' ,'W' ,  'divRow');
+            let divRowH             = createBalise('div' ,'H' ,  'divRow');
+            let divRowX             = createBalise('div' ,'X' ,  'divRow');
+            let divRowY             = createBalise('div' ,'Y' ,  'divRow');
+            let divNameWidth        = createBalise('div' , null , 'divName');
+            let divNameHeight       = createBalise('div' , null , 'divName');
+            let divInputWidth       = createBalise('div' , null , 'divInput');
+            let divInputHeight      = createBalise('div' , null , 'divInput');
+            let divNameLeft         = createBalise('div' , null , 'divName');
+            let divNameTop          = createBalise('div' , null , 'divName');
+            let divInputLeft        = createBalise('div' , null , 'divInput');
+            let divInputTop         = createBalise('div' , null , 'divInput');
+
+            let h3Width             = createBalise('h3');
+            let h3Position          = createBalise('h3');
+
+            let pWidth              = createBalise('p' , 'pWidth');
+            let pLength             = createBalise('p' , 'pLength');
+            let pLeft               = createBalise('p' , 'pLeft');
+            let pTop                = createBalise('p' , 'pTop');
+
+            let inputWidth          = createBalise('input');
+                inputWidth.attr('type' , 'text');
+                inputWidth.attr('name' , 'width');
+
+            let inputHeight         = createBalise('input');
+                inputHeight.attr('type' , 'text');
+                inputHeight.attr('name' , 'height');
+
+            let inputLeft           = createBalise('input');
+                inputLeft.attr('type' , 'text');
+                inputLeft.attr('name' , 'offLeft');
+
+            let inputTop            = createBalise('input');
+                inputTop.attr('type' , 'text');
+                inputTop.attr('name' , 'offTop');
             
             h3Width.text("Taille");
             pWidth.text("L");
@@ -306,7 +307,7 @@
             divNameHeight.append(pLength);
             divNameWidth.append(pWidth);
 
-            $('#firstBodyEditeur').append(divContainerCoord);
+            mainBody.append(divContainerCoord);
             
             
             
@@ -320,10 +321,11 @@
         
         (function(){
             
-            for(var idScrit in script){
-                
-                link = $("<script></script>")
-                link.attr('src',ROOT+'javascript/'+script[idScrit]+'.js');
+            for(let idScrit in script){
+
+                // language=HTML
+                let link = $("<script></script>");
+                    link.attr('src',ROOT+'javascript/'+script[idScrit]+'.js');
 
                 $("head").append(
 
