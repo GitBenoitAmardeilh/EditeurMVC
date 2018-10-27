@@ -180,7 +180,7 @@
             mainBody.append(divContainer);
             
             
-            /** CONTAINER PARAMETRES 
+            /** CONTAINER PARAGRAPHES 
             ----------------------------------------------------------------- **/
 
 
